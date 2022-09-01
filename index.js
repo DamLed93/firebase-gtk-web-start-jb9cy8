@@ -5,13 +5,16 @@ import './style.css';
 import { initializeApp } from 'firebase/app';
 
 // Add the Firebase products and methods that you want to use
-import {} from 'firebase/auth';
+import { getAuth, EmailAuthProvider } from 'firebase/auth';
 import {} from 'firebase/firestore';
+
 // Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app';
 import { getAnalytics } from 'firebase/analytics';
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
+
 import * as firebaseui from 'firebaseui';
 
 // Document elements
@@ -50,7 +53,8 @@ async function main() {
   const firebaseConfig = {};
 
   // initializeApp(firebaseConfig);
-
+  initializeApp(firebaseConfig);
+  auth = getAuth();
   // FirebaseUI config
   const uiConfig = {
     credentialHelper: firebaseui.auth.CredentialHelper.NONE,
